@@ -1,5 +1,5 @@
 const botconfig = require("./botconfig.json");
-const tokenfile = require("./token.json");
+const process.env.TOKEN = require("./token.json");
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const fs = require("fs");
@@ -41,4 +41,4 @@ bot.on("message", async message => {
 
 });
 
-bot.login(tokenfile.token);
+bot.login(process.env.TOKEN);
